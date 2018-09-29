@@ -18,3 +18,24 @@
 //		printf("sum=%f",sum);
 //		return 0;
 //}
+//ÓÅ»¯ºó
+int main()
+{
+	int i = 0;
+	int flat = 1;
+	float sum = 0;
+
+	for(i=1; i<=100;i++)
+
+	{
+		
+		sum += flat*1.0/i;
+		flat *= -1;
+
+	}
+		
+	printf("sum=%f",sum);
+
+		
+	return 0;
+}
