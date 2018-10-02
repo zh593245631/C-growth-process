@@ -162,7 +162,19 @@
 			UniqueIdentifier="{4FC737F1-C7A5-4376-A066-2A32D752A2FF}"
 			>
 			<File
+				RelativePath=".\×Ö·û´®.c"
+				>
+			</File>
+			<File
 				RelativePath=".\Ñ­»·.c"
+				>
+			</File>
+			<File
+				RelativePath=".\Ã¶¾Ù.c"
+				>
+			</File>
+			<File
+				RelativePath=".\×ªÒå×Ö·û.c"
 				>
 			</File>
 		</Filter>
