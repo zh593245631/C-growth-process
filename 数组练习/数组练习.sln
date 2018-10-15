@@ -1,0 +1,20 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 10.00
+# Visual Studio 2008
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "数组练习", "数组练习\数组练习.vcproj", "{727CA97B-95E4-4799-B56C-E6B599FB34BE}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Win32 = Debug|Win32
+		Release|Win32 = Release|Win32
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{727CA97B-95E4-4799-B56C-E6B599FB34BE}.Debug|Win32.ActiveCfg = Debug|Win32
+		{727CA97B-95E4-4799-B56C-E6B599FB34BE}.Debug|Win32.Build.0 = Debug|Win32
+		{727CA97B-95E4-4799-B56C-E6B599FB34BE}.Release|Win32.ActiveCfg = Release|Win32
+		{727CA97B-95E4-4799-B56C-E6B599FB34BE}.Release|Win32.Build.0 = Release|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

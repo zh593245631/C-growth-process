@@ -1,0 +1,20 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 10.00
+# Visual Studio 2008
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "新交换", "新交换\新交换.vcproj", "{B56016AE-4DA1-4EF7-8718-49DA91EACF1C}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Win32 = Debug|Win32
+		Release|Win32 = Release|Win32
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{B56016AE-4DA1-4EF7-8718-49DA91EACF1C}.Debug|Win32.ActiveCfg = Debug|Win32
+		{B56016AE-4DA1-4EF7-8718-49DA91EACF1C}.Debug|Win32.Build.0 = Debug|Win32
+		{B56016AE-4DA1-4EF7-8718-49DA91EACF1C}.Release|Win32.ActiveCfg = Release|Win32
+		{B56016AE-4DA1-4EF7-8718-49DA91EACF1C}.Release|Win32.Build.0 = Release|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
