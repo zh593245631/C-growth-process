@@ -9,7 +9,7 @@ int main()
 	for(i = 1; i <= 3; i++)
 	{
 		char arr[]="0";
-		scanf("%s",arr);
+		//scanf("%s",arr);
 
 		if(strcmp(arr,"zxc123...") == 1)
 		{
