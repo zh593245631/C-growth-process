@@ -1,0 +1,58 @@
+#define _CRT_SECURE_NO_WARNINGS
+#include"game.h"
+menu()
+{
+	printf("****扫雷小游戏**************************\n");
+	printf("***************1.play*******************\n");
+	printf("***************0.exit*******************\n");
+	printf("****************************************\n");
+
+}
+game()
+{
+	char show[ROW1][COL1] = {0};
+	char clei[ROW1][COL1] = {0};
+	int ret = 0;
+	srand((unsigned int)time(NULL));
+
+	init(show,clei,ROW1,COL1);//初始化两个数组；
+	_lei(clei,ROW,COL);		// 布置雷
+	display(show,ROW1,COL1);
+	/*display(clei,ROW1,COL1);*/
+	ret = playergo(show,clei,ROW,COL);
+	if(ret==1)
+	{
+		printf("恭喜你，游戏胜利！\n");
+	}
+	else
+	{	
+		printf("你被炸死了\n");
+	}
+		display(clei,ROW1,COL1);
+	
+
+
+}
+int main()
+{
+	int input = 0;
+
+	do
+	{
+		menu();
+		scanf("%d",&input);
+		switch(input)
+		{
+		case(1):game();
+			break;
+		case(0):printf("游戏结束\n");
+			break;
+		default:printf("无效操作，请重新选择：\n");
+			break;
+		
+		}
+
+	}while(input);
+
+	return 0;
+}
