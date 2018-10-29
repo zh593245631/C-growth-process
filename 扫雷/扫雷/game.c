@@ -70,6 +70,12 @@ int  playergo(char show[ROW1][COL1],char clei[ROW1][COL1],int row,int col)
 		}
 		else
 		{
+				if(count==row*col&&clei[x][y]=='1') //判断第一次玩的条件，如果
+				{
+					safe_LEI(clei,x,y);  
+				
+				}
+
 				if(clei[x][y]=='1')
 				{
 					printf("你被炸死了\n");
@@ -78,23 +84,46 @@ int  playergo(char show[ROW1][COL1],char clei[ROW1][COL1],int row,int col)
 				}
 				else
 				{
-					ret = _swap(clei,x,y);
-					show[x][y] = ret+'0';
-					if(ret==0)
-					{
-						open(clei,show,x,y);
-					}
-					count=getcount(show,ROW,COL);
+				
+					open(clei,show,x,y); // 判断是否连续展开；
+					count=getcount(show,ROW,COL); //剩余‘*’数量，与LEI比较控制循环；
 					display(show,ROW1,COL1);
+					/*display(clei,ROW1,COL1);*/
 
 				}
 		}
 
 	}
-	
+	display(clei,ROW1,COL1);
 	printf("恭喜你，游戏胜利！\n");
 	return 1;
 }
+void safe_LEI(char clei[ROW1][COL1],int x,int y)
+{
+	int count = 1;
+	while(count)
+	{
+		if(clei[x][y]=='1')
+		{
+			int i = rand()%ROW+1;
+			int j = rand()%COL+1;
+			
+			clei[x][y]='0';
+			if(clei[i][j]=='0')
+			{
+				clei[i][j]='1';
+				count--;
+			}
+
+		}
+		else
+			count--;
+	
+	}
+
+
+}
+
 int  _swap(char clei[ROW1][COL1],int x,int y)
 {
 	return clei[x-1][y]+clei[x-1][y-1]+clei[x][y-1]+clei[x+1][y-1]+clei[x+1][y]+
@@ -103,13 +132,51 @@ int  _swap(char clei[ROW1][COL1],int x,int y)
 }
 void open(char clei[ROW1][COL1],char show[ROW1][COL1],int x,int y)
 {
-	if(_swap(clei,x,y)==0)
-	{
-		open(clei,show,x-1,y);
-		open(clei,show,x,y+1);
-
-	}
+		
 	show[x][y] = _swap(clei,x,y)+'0';
+
+	if(clei[x][y]=='0'&&_swap(clei,x,y)==0) //如果此坐标不是LEI，并且附近安全则展开；
+	{
+		
+		//x+1,x-1,y+1,y-1时需要判断是否越界
+
+		if(clei[x+1][y]=='0'&&show[x+1][y]=='*'&&x+1<=ROW)//向下
+		{
+			show[x+1][y] = _swap(clei,x+1,y)+'0';
+			if(_swap(clei,x+1,y)==0)
+			{
+				open(clei,show,x+1,y);
+			}
+
+		}
+		if(clei[x-1][y]=='0'&&show[x-1][y]=='*'&&x-1>0)//向上
+		{
+			show[x-1][y] = _swap(clei,x-1,y)+'0';
+			if(_swap(clei,x-1,y)==0)
+			{
+				open(clei,show,x-1,y);
+			}
+
+		}
+		if(clei[x][y+1]=='0'&&show[x][y+1]=='*'&&y+1<=COL)//向右
+		{
+			show[x][y+1] = _swap(clei,x,y+1)+'0';
+			if(_swap(clei,x,y+1)==0)
+			{
+				open(clei,show,x,y+1);
+			}
+
+		}
+		if(clei[x][y-1]=='0'&&show[x][y-1]=='*'&&y-1>0)//向左
+		{
+			show[x][y-1] = _swap(clei,x,y-1)+'0';
+			if(_swap(clei,x,y-1)==0)
+			{
+				open(clei,show,x,y-1);
+			}
+
+		}
+	}
 
 
 }
@@ -120,7 +187,7 @@ int getcount(char show[ROW1][COL1],int row,int col)
 	int count = 0;
 	for(i=1;i<=row;i++)
 	{
-		for(j=0;j<=col;j++)
+		for(j=1;j<=col;j++)
 		{
 			if(show[i][j]=='*')
 				count++;
