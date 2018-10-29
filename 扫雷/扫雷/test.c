@@ -10,28 +10,16 @@ menu()
 }
 game()
 {
-	char show[ROW1][COL1] = {0};
-	char clei[ROW1][COL1] = {0};
-	int ret = 0;
-	srand((unsigned int)time(NULL));
+	char show[ROW1][COL1] = {0};// 游戏面板数组
+	char clei[ROW1][COL1] = {0};//	游戏内部含雷数组
+	srand((unsigned int)time(NULL));//随机数
 
 	init(show,clei,ROW1,COL1);//初始化两个数组；
-	_lei(clei,ROW,COL);		// 布置雷
-	display(show,ROW1,COL1);
-	/*display(clei,ROW1,COL1);*/
-	ret = playergo(show,clei,ROW,COL);
-	if(ret==1)
-	{
-		printf("恭喜你，游戏胜利！\n");
-	}
-	else
-	{	
-		printf("你被炸死了\n");
-	}
-		display(clei,ROW1,COL1);
-	
-
-
+	_lei(clei,ROW,COL);	// 布置雷
+	display(show,ROW1,COL1);// 打印游戏面板
+	display(clei,ROW1,COL1);//可以查看雷布置的位置
+	playergo(show,clei,ROW,COL); // 玩家开始玩游戏（内置游戏输赢判断）
+		
 }
 int main()
 {
