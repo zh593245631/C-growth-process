@@ -17,7 +17,7 @@ game()
 	init(show,clei,ROW1,COL1);//初始化两个数组；
 	_lei(clei,ROW,COL);	// 布置雷
 	display(show,ROW1,COL1);// 打印游戏面板
-	/*display(clei,ROW1,COL1);*///可以查看雷布置的位置
+	display(clei,ROW1,COL1);//可以查看雷布置的位置
 	playergo(show,clei,ROW,COL); // 玩家开始玩游戏（内置游戏输赢判断）
 		
 }

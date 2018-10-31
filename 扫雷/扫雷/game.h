@@ -16,16 +16,9 @@ void display(char arr[ROW1][COL1],int row,int col);//打印游戏界面
 void _lei(char arr[ROW1][COL1],int row,int col);
 int playergo(char show[ROW1][COL1],char clei[ROW1][COL1],int row,int col);
 int _swap(char clei[ROW1][COL1],int x,int y);//查看（x,y）周围几个雷
-void open(char clei[ROW1][COL1],char show[ROW1][COL1],int x,int y);
-int getcount(char show[ROW1][COL1],int row,int col);
-void safe_LEI(char clei[ROW1][COL1],int x,int y);
-
-
-
-
-
-
-
+void open(char clei[ROW1][COL1],char show[ROW1][COL1],int x,int y);//展开函数
+int getcount(char show[ROW1][COL1],int row,int col); //获取剩余‘*’
+void safe_LEI(char clei[ROW1][COL1],int x,int y); //第一次是LEI偷偷移走
 
 
 #endif __GAME_H__ 
