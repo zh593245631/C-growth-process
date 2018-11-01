@@ -84,7 +84,7 @@ int  playergo(char show[ROW1][COL1],char clei[ROW1][COL1],int row,int col)
 				}
 				else
 				{
-				
+					show[x][y] = _swap(clei,x,y)+'0';
 					open(clei,show,x,y); // 判断是否连续展开；
 					count=getcount(show,ROW,COL); //剩余‘*’数量，与LEI比较控制循环；
 					display(show,ROW1,COL1);
@@ -132,12 +132,9 @@ int  _swap(char clei[ROW1][COL1],int x,int y)
 }
 void open(char clei[ROW1][COL1],char show[ROW1][COL1],int x,int y)
 {
-		
-	show[x][y] = _swap(clei,x,y)+'0';
 
 	if(clei[x][y]=='0'&&_swap(clei,x,y)==0) //如果此坐标不是LEI，并且附近安全则展开；
 	{
-		
 		//x+1,x-1,y+1,y-1时需要判断是否越界
 
 		if(clei[x+1][y]=='0'&&show[x+1][y]=='*'&&x+1<=ROW)//向下
@@ -176,6 +173,8 @@ void open(char clei[ROW1][COL1],char show[ROW1][COL1],int x,int y)
 			}
 
 		}
+
+
 	}
 
 
