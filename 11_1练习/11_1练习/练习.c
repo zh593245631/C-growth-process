@@ -65,24 +65,26 @@
 //	return 0;
 //}
 //
-enum Liquid
-{
-	OUNCE = 1,
-	CUP = 8,
-	PINT = 16,
-	QUART = 32,
-	GALLON = 128
+//enum Liquid
+//{
+//	OUNCE = 1,
+//	CUP = 8,
+//	PINT = 16,
+//	QUART = 32,
+//	GALLON = 128
+//
+//};
+//int main()
+//{
+//	//不是字符串，不可以用字符串格式打印；
+//	enum Liquid jar = QUART;
+//	printf("%s\n",jar); 
+//	
+//	jar=jar+PINT;
+//	printf("%s\n",jar);
+//
+//	return 0;
+//}
+////
 
-};
-int main()
-{
-	//不是字符串，不可以用字符串格式打印；
-	enum Liquid jar = QUART;
-	printf("%s\n",jar); 
-	
-	jar=jar+PINT;
-	printf("%s\n",jar);
-
-	return 0;
-}
 
