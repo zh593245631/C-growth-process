@@ -173,6 +173,10 @@
 				RelativePath=".\3.c"
 				>
 			</File>
+			<File
+				RelativePath=".\4.c"
+				>
+			</File>
 		</Filter>
 		<Filter
 			Name="Í·ÎÄ¼þ"
