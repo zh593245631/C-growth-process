@@ -54,13 +54,91 @@ char* my_strstr(const char* str1,const char* str2)
 	}
 	return NULL;
 }
+char* my_strchr(const char* str, int c)
+{
+	char string = (char)c;
+	assert(str);
+
+	while(*str)
+	{
+		if(*str==string)
+			return (char*)str;
+		str++;
+	}
+	return NULL;
+
+
+
+}
+int my_strcmp(const char* str1, const char* str2)
+{
+	int ret = 0;
+	assert(str1);
+	assert(str2);
+
+	while(!(ret = *str1-*str2)&&*str2)
+	{
+		str1++;
+		str2++;
+	}
+
+	
+	if(ret>0)
+		return 1;
+	else if(ret<0)
+		return -1;
+	else
+		return 0;
+
+
+}
+void* my_memcpy(void* dst, const void* src, int num)
+{
+	char* dst1 = (char*)dst;
+	char* src1 = (char*)src;
+
+	assert(dst);
+	assert(src);
+
+	while(num--)
+	{
+		/**((char*)dst)++=*((char*)src)++;*/
+		*dst1++ = *src1++;
+
+	}
+
+	return dst;
+}
+void* my_memmove(void* dst, const void* src, int num)
+{
+	char* dst1 = (char*)dst;
+	char* src1 = (char*)src;
+	assert(dst);
+	assert(src);
+	if(dst1>src1&&dst1<(src1+num))
+	{
+		dst1 = dst1+(num-1);
+		src1 = src1+(num-1);
+		while(num--)
+		{
+			*dst1--=*src1--;
+		}
+	}
+	else
+	{
+		while(num--)
+		{
+			*dst1++ = *src1++;
+		}
+	}
+	return dst;
+}
 int main()
 {
-	char str1[] = "ab0de";
-	char str2[10] = "b0";
-	
-	/*my_strstr(str1,str2);*/
+	char str1[10] = "abcdef";
+	char str2[] = "aabbbbbb";
+	my_memmove(str1+1,str1,8);
+	printf("%s\n",str1);
 
-	printf("%s\n",my_strstr(str1,str2));
 	return 0;
 }
