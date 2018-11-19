@@ -43,36 +43,36 @@
 //}
 //
 //
-#include<stdio.h>
-int reverse(unsigned int x)
-{
-	int count = 0;
-	unsigned int y = 0;
-    unsigned int tmp = x;
-
-
-	while(tmp)
-	{
-		//0000 0000 0000 0000 0000 0000 0000 00001 循环1次
-		//1000 0000 0000 0000 0000 0000 0000 00000 循环32次
-		//0000 0000 0000 0000 1000 0000 0000 00000 循环16次
-		if(tmp&1)
-		{
-			y|=(1<<(31-count));//所有位初始化为0，只翻转为1的
-		}
-		tmp>>=1;
-		count++;
-		
-	}
-	return y;
-
-}
-int main()
-{
-    unsigned int x = 25;
-	unsigned int y = reverse(x);
-
-	printf("x:%u\n",x);
-	printf("y:%u\n",y);
-	return 0;
-}
+//#include<stdio.h>
+//int reverse(unsigned int x)
+//{
+//	int count = 0;
+//	unsigned int y = 0;
+//    unsigned int tmp = x;
+//
+//
+//	while(tmp)
+//	{
+//		//0000 0000 0000 0000 0000 0000 0000 00001 循环1次
+//		//1000 0000 0000 0000 0000 0000 0000 00000 循环32次
+//		//0000 0000 0000 0000 1000 0000 0000 00000 循环16次
+//		if(tmp&1)
+//		{
+//			y|=(1<<(31-count));//所有位初始化为0，只翻转为1的
+//		}
+//		tmp>>=1;
+//		count++;
+//		
+//	}
+//	return y;
+//
+//}
+//int main()
+//{
+//    unsigned int x = 25;
+//	unsigned int y = reverse(x);
+//
+//	printf("x:%u\n",x);
+//	printf("y:%u\n",y);
+//	return 0;
+//}

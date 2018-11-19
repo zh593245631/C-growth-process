@@ -1,23 +1,23 @@
-//#define _CRT_SECURE_NO_WARNINGS
-//#include<stdio.h>
-//#include<assert.h>
-//void reverse(char* left,char* right)
-//{
-//	assert(left);
-//	assert(right);
-//	while(left<right)
-//	{
-//		char tmp = *left;
-//			 *left = *right;
-//			 *right = tmp;
-//			 left++;
-//			 right--;
-//	
-//	}
-//
-//
-//}
-//
+#define _CRT_SECURE_NO_WARNINGS
+#include<stdio.h>
+#include<assert.h>
+void reverse(char* left,char* right)
+{
+	assert(left);
+	assert(right);
+	while(left<right)
+	{
+		char tmp = *left;
+			 *left = *right;
+			 *right = tmp;
+			 left++;
+			 right--;
+	
+	}
+
+
+}
+
 //char* reverse_str(char* str, const int sz)
 //{	
 //	char *str1 = str;
@@ -47,13 +47,35 @@
 //
 //
 //}
-//int main()
-//{
-//	char arr[] = "student a am i";
-//	int sz = sizeof(arr)/sizeof(arr[0]);
-//
-//	printf("%s\n",arr);
-//	printf("%s\n",reverse_str(arr,sz));
-//
-//	return 0;
-//}
+//ÓÅ»¯
+void reverse_str(char a[])
+{
+	//assert(a);
+	char* star = a;
+	char* end = star;
+	while(*end)
+	{
+		if(*end==' ')
+		{
+			reverse(star,end-1);
+			star = end+1;
+		}
+		end++;
+	
+	}
+		reverse(star,end-1);
+		reverse(a,end-1);
+}
+int main()
+{
+	char arr[] = "student a am i";
+	int sz = sizeof(arr)/sizeof(arr[0]);
+
+	printf("%s\n",arr);
+	/*printf("%s\n",reverse_str(arr,sz));*/
+	reverse_str(arr);
+	printf("%s\n",arr);
+
+
+	return 0;
+}
