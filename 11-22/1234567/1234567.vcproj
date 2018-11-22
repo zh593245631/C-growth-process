@@ -2,7 +2,7 @@
 <VisualStudioProject
 	ProjectType="Visual C++"
 	Version="9.00"
-	Name="1234567"
+	Name="11-22"
 	ProjectGUID="{5956E13D-0DFF-4045-9E88-9C9C74C350D8}"
 	RootNamespace="My1234567"
 	TargetFrameworkVersion="196613"
@@ -161,6 +161,10 @@
 			Filter="cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx"
 			UniqueIdentifier="{4FC737F1-C7A5-4376-A066-2A32D752A2FF}"
 			>
+			<File
+				RelativePath=".\11-22.c"
+				>
+			</File>
 		</Filter>
 		<Filter
 			Name="Í·ÎÄ¼þ"
