@@ -133,12 +133,67 @@ void* my_memmove(void* dst, const void* src, int num)
 	}
 	return dst;
 }
+char *my_strncpy(char* dst,const char* src,int count)
+{
+	char* dst1 = dst;
+	char* src1 = (char*)src;
+	int num = count;
+	assert(dst&&src);
+	while(*src1++)
+	{
+		num--;
+	}
+	src1 = (char*)src;
+	while(count)
+	{
+		*dst1++ = *src1++;
+		count--;
+	}
+	if(num>0)	
+		*dst1 = '\0';
+
+	return dst;
+
+}
+char *my_strncat(char* dst,const char* src,int num)
+{
+	char* dst1 = dst;
+	char* src1 = (char*)src;
+	assert(dst&&src);
+	while(*dst1)
+	{
+		dst1++;
+	}
+	while(num--)
+	{
+		*dst1++ = *src1++;
+	}
+	*dst1 = '\0';
+
+	return dst;
+
+
+}
+int my_strncmp(const char* str1,const char*str2, int num)
+{
+	assert(str1&&str2);
+	while(num--)
+	{
+		if(*str1!=*str2)
+			return (*str1-*str2);
+		str1++;
+		str2++;
+	}
+	return 0;
+	
+}
 int main()
 {
-	char str1[10] = "abcdef";
-	char str2[] = "aabbbbbb";
-	my_memmove(str1+1,str1,8);
-	printf("%s\n",str1);
+	char str1[] = "aabbbbb";
+	char str2[] = "aabbbb";
+	int a = my_strncmp(str1,str2,7);
+	/*printf("%s\n",str1);*/
+	printf("%d\n",a);
 
 	return 0;
 }
