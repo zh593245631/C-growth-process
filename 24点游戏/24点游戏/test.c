@@ -10,11 +10,18 @@ void menu()
 void game()
 {
 	int arr[4] = {0};
+	int num;
 	get_rand(arr);
-	PlayGame(arr);
-	
-	
-	
+	num = PlayGame(arr);
+	if(NUM == num)
+	{
+		printf("游戏胜利！\n");
+	}
+	else
+	{
+		printf("很遗憾，您计算错误，结果为：%d\n",num);
+	}
+
 }
 int main()
 {

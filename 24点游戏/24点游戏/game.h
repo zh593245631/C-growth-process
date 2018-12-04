@@ -4,8 +4,11 @@
 #include<stdio.h>
 #include<time.h>
 #include<stdlib.h>
+#include<string.h>
+#define MAX_SIZE 1024   /*数组长度*/
+#define NUM  24
 void get_rand(int* arr);
-void PlayGame(int* arr);
+int PlayGame(int* arr);
 
 
 #endif __GAME_H__ 
