@@ -2,7 +2,7 @@
 
 void menu()
 {
-	printf("***ͨѶ¼************************\n");
+	printf("****contacts*********************\n");
 	printf("****** 1.add      2.delete ******\n");
 	printf("****** 3.serach   4.update ******\n");
 	printf("****** 5.list     6.emplty ******\n");
