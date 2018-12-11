@@ -2,6 +2,7 @@
 #include<stdio.h>
 #include<Windows.h>
 #include<stdlib.h>
+#define M 100
 //基础练习 Huffuman树
 //时间限制：1.0s   内存限制：512.0MB
 //
@@ -47,9 +48,12 @@ int Huffman(int* arr, int n)
 
 int main()
 {
-	int arr[5] = { 5, 3, 8, 2, 9 };
+	int arr[M] = {0};
 	int n;
+	int i;
 	scanf("%d", &n);
+	for (i = 0; i<n; i++)
+		scanf("%d", &arr[i]);
 	printf("%d\n",Huffman(arr, n));
 	system("pause");
 	return 0;
