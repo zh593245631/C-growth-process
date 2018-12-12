@@ -33,7 +33,13 @@ void Sine(const int n)
 			printf("sin(1-sin(2");
 			int j;
 			for (j = 3; j <= i; j++)
-				printf("+sin(%d", j);
+			{
+				if (j % 2)
+					printf("+");
+				else
+					printf("-");
+				printf("sin(%d", j);
+			}
 			//打印an后面的括号
 			for (j = 0; j < i; j++)
 				printf(")");
