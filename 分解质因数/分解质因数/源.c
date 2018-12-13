@@ -47,9 +47,9 @@ void FJ(const int a, const int b)
 			printf("%d\n", i);
 		else{
 			int m;
+			int tmp = i;
 			for (m = 2; m < i; m++)
 			{
-				int tmp = i;
 				while (p_su(m) && !(tmp%m)){
 					printf("%d", m);
 					tmp /= m;
