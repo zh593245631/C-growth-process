@@ -35,7 +35,7 @@ void du(int num)
 		print(10);
 	}
 	else{
-		if (num/Q)
+		if (num%S)
 			print(num / S%S);
 	}
 	//个
@@ -55,11 +55,15 @@ int main()
 	}
 	//打印万
 	if (c%Y / W){
+		if (!(c%Y / W / Q))
+			print(0);
 		du(c%Y/W);
 		printf("%s ", *(p + 13));
 	}
 	//打印千
 	if (c%W){
+		if (!(c%W / Q))
+			print(0);
 		du(c%W);
 	}
 	printf("%lld", c);
