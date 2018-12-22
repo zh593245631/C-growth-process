@@ -67,5 +67,5 @@ void SeqListBubbleSort(SeqList *seqlist);
 // 二分法
 int SeqListBinaryFind(SeqList *seqlist, SDataType value);
 
-//删除所有的
+//删除所有的 o(N) o(1)
 void SeqListRemoveAll(SeqList *seqlist, SDataType value);
