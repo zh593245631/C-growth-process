@@ -85,6 +85,7 @@ void SListEraseAfter(SListNode* pos)
 
 	free(old_pos);
 }
+//Œ≤…æ
 void SListPopBack(SList *list)
 {
 	assert(list);
@@ -124,6 +125,28 @@ void SListPushBack(SList *list, SLTDataType x)
 	}
 		cur->next = node;
 
+}
+void SListRemove(SList* plist, SLTDataType x)
+{
+	assert(plist);
+
+	SListNode* node = plist->head;
+	SListNode* cur = NULL;
+
+	while (node){
+		if (node->data == x){
+			if (node == plist->head){
+				plist->head = node->next;
+			}
+			else{
+				cur->next = node->next;
+			}
+		}
+		else{
+			cur = node;
+		}
+		node = node->next;
+	}
 }
 
 //¥Ú”°
