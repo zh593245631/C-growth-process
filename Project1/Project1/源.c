@@ -67,7 +67,7 @@ void swap(int* a, int* b)
 {
 	int i = 0;
 	for (i = 0; i < size - 1; i++){
-		for (j = 0; j < size - i; j++){
+		for (j = 0; j < size -1- i; j++){
 			if (arr[j]>arr[j + 1])
 				swap(&arr[j], &arr[j + 1]);
 		}
